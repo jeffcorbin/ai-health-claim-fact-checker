@@ -1,4 +1,6 @@
-"scripts": {
-  "start": "ts-node server/index.ts",
-  "dev": "nodemon server/index.ts"
+{
+  "scripts": {
+    "start": "ts-node server/index.ts",
+    "dev": "nodemon server/index.ts"
+  }
 }
