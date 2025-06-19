@@ -1,29 +1,25 @@
 // server/index.ts
-
 import express from "express";
 import cors from "cors";
-import { ClaimCheckResult } from "../types/ClaimCheckResult";
+import { validateClaim } from "../agent/agent";
 
 const app = express();
+app.use(express.json());
 app.use(cors());
 
 app.post("/check", async (req, res) => {
   const { claim } = req.body;
 
-  // TODO: Wire this to real agent later
-  const result: ClaimCheckResult = {
-    isFactual: false,
-    evidence: [
-      "No scientific evidence supports that Vitamin C cures cancer.",
-      "NIH and Mayo Clinic articles refute this claim."
-    ],
-    explanation: "This claim is widely debunked."
-  };
-
-  res.json(result);
+  try {
+    const result = await validateClaim(claim);
+    res.json(result);
+  } catch (error) {
+    console.error("Error validating claim:", error);
+    res.status(500).json({ error: "Failed to validate claim" });
+  }
 });
 
 const PORT = 3000;
 app.listen(PORT, () => {
-  console.log('Server is running at http://localhost:${PORT}');
+  console.log(`✅ Server is running at http://localhost:${PORT}`);
 });
