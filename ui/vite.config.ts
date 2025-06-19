@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/check': 'http://localhost:3000',
+      '/check': 'http://localhost:5174',
     },
   },
 });
