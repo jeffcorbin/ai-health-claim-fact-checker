@@ -2,5 +2,9 @@
   "scripts": {
     "start": "ts-node server/index.ts",
     "dev": "nodemon server/index.ts"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
   }
 }
