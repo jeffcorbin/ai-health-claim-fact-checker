@@ -15,7 +15,7 @@ export async function fetchPubMedSummaries(query: string): Promise<string[]> {
       }
     });
 
-    const ids = searchRes.data.esearchresult.idlist;
+    const ids = (searchRes.data as { esearchresult: { idlist: string[] } }).esearchresult.idlist;
     if (!ids.length) return [];
 
     // Step 2: Fetch summaries for those IDs
@@ -27,7 +27,7 @@ export async function fetchPubMedSummaries(query: string): Promise<string[]> {
       }
     });
 
-    const summaries = Object.values(summaryRes.data.result)
+    const summaries = Object.values((summaryRes.data as { result: Record<string, any> }).result)
       .filter((r: any) => r && r.title)
       .map((r: any) => r.title);
 
@@ -45,7 +45,7 @@ export async function fetchWikipediaSummary(query: string): Promise<string | nul
   try {
     const title = encodeURIComponent(query);
     const res = await axios.get(`https://en.wikipedia.org/api/rest_v1/page/summary/${title}`);
-    return res.data.extract;
+    return (res.data as { extract: string }).extract;
   } catch {
     return null;
   }
