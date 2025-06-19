@@ -14,5 +14,21 @@
     "nodemon": "^3.1.10",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
-  }
+  },
+  "name": "ai-health-claim-fact-checker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeffcorbin/ai-health-claim-fact-checker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jeffcorbin/ai-health-claim-fact-checker/issues"
+  },
+  "homepage": "https://github.com/jeffcorbin/ai-health-claim-fact-checker#readme"
 }
