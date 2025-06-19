@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 
 interface ClaimCheckResult {
@@ -16,7 +16,7 @@ export default function Home() {
     setLoading(true);
     try {
       const res = await axios.post('/check', { claim });
-      setResult(res.data);
+      setResult(res.data as ClaimCheckResult);
     } catch (err) {
       alert('Failed to check claim');
     } finally {
