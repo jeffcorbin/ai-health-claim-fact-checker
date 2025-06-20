@@ -166,7 +166,6 @@ You can deploy the backend to any Node-compatible hosting (e.g., Heroku, AWS EC2
 
 ## 💡 Next Steps
 
-* Replace the stubbed retriever with real PubMed & Wikipedia integration.
 * Integrate GuardrailsAI or Rebuff for more advanced LLM output safety.
 * Add a database (SQLite or Postgres) to persist claims and feedback.
 * Build CI/CD pipelines with GitHub Actions or Azure DevOps.
