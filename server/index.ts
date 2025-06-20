@@ -1,4 +1,6 @@
 // server/index.ts
+console.log("🔍 Starting server...");
+
 import express from "express";
 import cors from "cors";
 import { validateClaim } from "../agent/agent";
