@@ -1,0 +1,5 @@
+{
+  "watch": ["server", "agent", "retriever"],
+  "ext": "ts,json",
+  "exec": "ts-node server/index.ts"
+}
